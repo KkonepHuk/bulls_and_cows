@@ -1,3 +1,9 @@
+#Склонение быков и коров
+#Сложность игры
+#Крутость хода
+#Вывод иекущих результатов через функцию
+
+
 from random import randint
 
 
@@ -10,7 +16,21 @@ gamenumber = ''.join(gamenumber_list)
 def main():
     while True:
         move(gamenumber)
-        print(f'{playernumber}: {compare(gamenumber, playernumber)[0]} быка, {compare(gamenumber, playernumber)[1]} коров')
+        bulls = compare(gamenumber, playernumber)[0]
+        cows = compare(gamenumber, playernumber)[1]
+        if bulls == 0:
+            message_bulls = 'быков'
+        elif bulls == 1:
+            message_bulls = 'бык'
+        else:
+            message_bulls = 'быка'
+        if cows == 0:
+            message_cows = 'коров'
+        elif cows == 1:
+            message_cows = 'корова'
+        else:
+            message_cows = 'коровы'
+        print(f'{playernumber}: {bulls} {message_bulls}, {cows} {message_cows}')
         if compare(gamenumber, playernumber)[0] == 4:
             print('Мууу! Победа!')
             break

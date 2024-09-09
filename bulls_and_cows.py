@@ -1,11 +1,11 @@
 #Крутость хода coolnes_of_move
 #Реализовать функцию start(), котоая будет выводить приветственные слова и т.п.
-#Проверка одинаковых знаков
 
 from random import randint
 
 
 def main():
+    start()
     difficult()
     print(gamenumber)
     while True:
@@ -81,5 +81,8 @@ def similar(number):
             return True
     return False
 
-print('Добро пожаловать!\nКомпьютер уже загадал число. Давайте же начнем!')
+def start():
+    print('Добро пожаловать!\nКомпьютер уже загадал число. Давайте же начнем!')
+
+
 main()

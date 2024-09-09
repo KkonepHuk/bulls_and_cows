@@ -1,20 +1,20 @@
 #Крутость хода coolnes_of_move
-#Реализовать функцию start(), котоая будет выводить приветственные слова и т.п.
 
+#импортирование библиотек
 from random import randint
 
 
+#главный цикл
 def main():
     start()
     difficult()
-    print(gamenumber)
     while True:
         move(gamenumber)
         if not current(compare(gamenumber, playernumber)[0], compare(gamenumber, playernumber)[1]):
             break
             
 
-
+#выполнение хода (обработка введенного игроком числа)
 def move(gamenumber):
     global playernumber
     while True:
@@ -30,6 +30,7 @@ def move(gamenumber):
             print('Недопустимый ввод. Попробуйте ещё раз: ')
 
 
+#подсчет быков и коров (сравнение числа игрока и загаданного компьютером)
 def compare(gamenumber, playernumber):
     bulls = 0
     cows = 0
@@ -43,6 +44,7 @@ def compare(gamenumber, playernumber):
     return (bulls, cows)
 
 
+#обработка и вывод результатов хода
 def current(bulls, cows):
     if bulls == len(str(gamenumber)):
         print('Мууу! Победа!')
@@ -63,6 +65,7 @@ def current(bulls, cows):
     return True
 
 
+#установка сложности игры
 def difficult():
     global gamenumber
     while True:
@@ -75,12 +78,16 @@ def difficult():
         except ValueError:
             print('Недопустимый ввод. Попробуйте ещё.')
 
+
+#проверка на совпадение цифр в числе
 def similar(number):
     for i in range(1, len(str(number))):
         if str(number)[i - 1] == str(number)[i]:
             return True
     return False
 
+
+#приветственные слова
 def start():
     print('Добро пожаловать!\nКомпьютер уже загадал число. Давайте же начнем!')
 

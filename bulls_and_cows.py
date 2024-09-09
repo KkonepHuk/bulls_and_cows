@@ -1,13 +1,13 @@
-#Сложность игры
-#Крутость хода
-
+#Крутость хода coolnes_of_move
+#Реализовать функцию start(), котоая будет выводить приветственные слова и т.п.
+#Проверка одинаковых знаков
 
 from random import randint
 
 
-
-
 def main():
+    difficult()
+    print(gamenumber)
     while True:
         move(gamenumber)
         if not current(compare(gamenumber, playernumber)[0], compare(gamenumber, playernumber)[1]):
@@ -42,7 +42,7 @@ def compare(gamenumber, playernumber):
 
 
 def current(bulls, cows):
-    if bulls == 4:
+    if bulls == len(str(gamenumber)):
         print('Мууу! Победа!')
         return False
     if bulls == 0:
@@ -74,7 +74,6 @@ def difficult():
             print('Недопустимый ввод. Попробуйте ещё.')
 
 
+
 print('Добро пожаловать!\nКомпьютер уже загадал число. Давайте же начнем!')
-difficult()
-print(gamenumber)
 main()

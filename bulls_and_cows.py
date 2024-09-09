@@ -1,16 +1,11 @@
 #Сложность игры
 #Крутость хода
-#Вывод текущих результатов через функцию
 
 
 from random import randint
 
 
-difficult = 4
-num = [i for i in range(1, 10)]
-gamenumber_list = [str(num.pop(randint(0, len(num) - 1))) for i in range(difficult)]
-gamenumber = ''.join(gamenumber_list)
-print(gamenumber)
+
 
 def main():
     while True:
@@ -66,5 +61,20 @@ def current(bulls, cows):
     return True
 
 
+def difficult():
+    global gamenumber
+    while True:
+        try:
+            diff = int(input('Установите сложность игры: '))
+            num = [i for i in range(1, 10)]
+            gamenumber_list = [str(num.pop(randint(0, len(num) - 1))) for i in range(diff)]
+            gamenumber = ''.join(gamenumber_list)
+            break
+        except ValueError:
+            print('Недопустимый ввод. Попробуйте ещё.')
+
+
 print('Добро пожаловать!\nКомпьютер уже загадал число. Давайте же начнем!')
+difficult()
+print(gamenumber)
 main()

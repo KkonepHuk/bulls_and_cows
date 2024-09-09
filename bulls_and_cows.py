@@ -71,7 +71,7 @@ def difficult():
     while True:
         try:
             diff = int(input('Установите сложность игры: '))
-            num = [i for i in range(1, 10)]
+            num = [i for i in range(0, 10)]
             gamenumber_list = [str(num.pop(randint(0, len(num) - 1))) for i in range(diff)]
             gamenumber = ''.join(gamenumber_list)
             break

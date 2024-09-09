@@ -21,7 +21,9 @@ def move(gamenumber):
         try:
             playernumber = int(input(('Сделать ход: ')))
             if len(str(playernumber)) != len(str(gamenumber)):
-                print(f'Необходимо ввести число стостоящее из {len(str(gamenumber))} цифр. Попробуйте ещё раз:')
+                print(f'Необходимо ввести число стостоящее из {len(str(gamenumber))} цифр. Попробуйте ещё раз.')
+            elif similar(playernumber):
+                print('Цифры не могут повторяться. Попробуйте ещё раз.')
             else:
                 break
         except ValueError:
@@ -73,7 +75,11 @@ def difficult():
         except ValueError:
             print('Недопустимый ввод. Попробуйте ещё.')
 
-
+def similar(number):
+    for i in range(1, len(str(number))):
+        if str(number)[i - 1] == str(number)[i]:
+            return True
+    return False
 
 print('Добро пожаловать!\nКомпьютер уже загадал число. Давайте же начнем!')
 main()

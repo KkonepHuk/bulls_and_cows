@@ -49,13 +49,13 @@ def current(bulls, cows):
     if bulls == len(str(gamenumber)):
         print('Мууу! Победа!')
         return False
-    if bulls == 0:
+    if bulls in [0, 5, 6, 7, 8, 9, 10]:
         message_bulls = 'быков'
     elif bulls == 1:
         message_bulls = 'бык'
     else:
         message_bulls = 'быка'
-    if cows == 0:
+    if cows in [0, 5, 6, 7, 8, 9, 10]:
         message_cows = 'коров'
     elif cows == 1:
         message_cows = 'корова'

@@ -8,6 +8,7 @@ from random import randint
 def main():
     start()
     difficult()
+    print(gamenumber)
     while True:
         move(gamenumber)
         if not current(compare(gamenumber, playernumber)[0], compare(gamenumber, playernumber)[1]):
@@ -19,7 +20,7 @@ def move(gamenumber):
     global playernumber
     while True:
         try:
-            playernumber = int(input(('Сделать ход: ')))
+            playernumber = input(('Сделать ход: '))
             if len(str(playernumber)) != len(str(gamenumber)):
                 print(f'Необходимо ввести число стостоящее из {len(str(gamenumber))} цифр. Попробуйте ещё раз.')
             elif similar(playernumber):
@@ -35,7 +36,6 @@ def compare(gamenumber, playernumber):
     bulls = 0
     cows = 0
     gamenumber = str(gamenumber)
-    playernumber = str(playernumber)
     for i in range(len(gamenumber)):
         if gamenumber[i] == playernumber[i]:
             bulls += 1
